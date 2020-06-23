@@ -27,6 +27,7 @@ public class BooksController {
 	@Autowired
 	private LibraryService libraryService;
 	
+	//check for spaces in fields for book details
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
 		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
@@ -54,6 +55,7 @@ public class BooksController {
 		return "redirect:/books/booksList";
 	}
 
+	//before saving, data is validated
 	@PostMapping("/saveBook")
 	public String saveBook(@Valid @ModelAttribute("book") Books book, BindingResult br) {
 

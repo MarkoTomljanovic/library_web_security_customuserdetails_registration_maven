@@ -47,7 +47,7 @@ public class UserDaoImpl implements UserDao {
 	public List<User> getUsers() {
 		Session session = sessionFactory.getCurrentSession();
 		
-		List<User> users = session.createQuery("from User as u inner join fetch u.roles ").getResultList();
+		List<User> users = session.createQuery("from User").getResultList();
 		
 		return users;
 	}

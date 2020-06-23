@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import library.web.entity.User;
 import library.web.service.UserService;
 
+//controller that proccesses admin
 @Controller
 @RequestMapping("/admin")
 public class AdminController {

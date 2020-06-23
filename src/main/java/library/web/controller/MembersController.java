@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -28,6 +27,7 @@ public class MembersController {
 	@Autowired
 	private LibraryService libraryService;
 	
+	//check for spaces in fields for members details
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
 		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
@@ -48,6 +48,7 @@ public class MembersController {
 		return "member-form-add";
 	}
 
+	//before saving, data is validated
 	@PostMapping("/saveMember")
 	public String saveMember(@Valid @ModelAttribute("member") Members member, BindingResult br) {
 

@@ -49,6 +49,7 @@ public class AppConfig implements WebMvcConfigurer {
 		return viewResolver;
 	}
 	
+	//datasource for library database
 	@Bean
 	public DataSource myDataSource() {
 
@@ -85,6 +86,7 @@ public class AppConfig implements WebMvcConfigurer {
 	}
 
 	
+	//datasource for database with login info
 	@Bean
 	@Primary
 	public DataSource securityDataSource() {

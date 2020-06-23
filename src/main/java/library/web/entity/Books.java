@@ -15,7 +15,9 @@ import javax.validation.constraints.Size;
 	@Entity
 	@Table(name = "books")
 	public class Books {
-	    @Id
+		
+		//fields are annotated for data validation
+		@Id
 	    @Column(name = "id")
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private int id;
